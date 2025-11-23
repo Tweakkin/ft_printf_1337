@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 17:47:27 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/23 15:58:15 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/11/23 16:00:40 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	handle_formats(char format, va_list list)
 {
 	int	count;
-	
+
 	count = 0;
 	if (format == 'c')
 		count = ft_putchar(va_arg(list, int));
@@ -36,9 +36,9 @@ int	handle_formats(char format, va_list list)
 
 int	ft_printf(const char *s, ...)
 {
-    va_list	list;
+	va_list	list;
 	int		count;
-	
+
 	if (!s)
 		return (-1);
 	va_start(list, s);
@@ -49,7 +49,7 @@ int	ft_printf(const char *s, ...)
 		{
 			s++;
 			if (*s == '\0')
-				break;
+				break ;
 			count += handle_formats(*s, list);
 		}
 		else

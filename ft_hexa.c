@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 18:05:03 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/23 12:01:22 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/11/23 16:01:13 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	ft_dec_tohexa(unsigned long n, char c)
 int	ft_dec_tohexa_p(void *p)
 {
 	int	count;
-	
+
 	count = 0;
-	if(!p)
+	if (!p)
 	{
 		count = ft_putstr("(nil)");
 		return (count);
