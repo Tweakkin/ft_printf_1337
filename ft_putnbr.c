@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 18:25:34 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/23 15:40:18 by yboukhmi         ###   ########.fr       */
+/*   Created: 2025/11/23 12:35:55 by yboukhmi          #+#    #+#             */
+/*   Updated: 2025/11/23 12:36:04 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putnbr(long n)
 {
-	write (1, &c, 1);
-	return (1);
+	int		count;
+
+	count = 0;
+	if (n < 0)
+	{
+		count += ft_putchar('-');
+		n = -n;
+	}
+	if (n > 9)
+		count += ft_putnbr(n / 10);
+	count += ft_putchar((n % 10) + '0');
+	return (count);
 }

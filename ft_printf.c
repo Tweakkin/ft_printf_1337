@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 17:47:27 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/22 19:02:51 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/11/23 15:39:51 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	handle_formats(char format, va_list list)
 	if (format == 'x' || format == 'X')
 		count = ft_dec_tohexa(va_arg(list, unsigned int), format);
 	if (format == 'p')
-		
+		count = ft_dec_tohexa_p(va_arg(list, void *));
+	if (format == 'd' || format == 'i')
+		count = ft_putnbr(va_arg(list, int));
+
 	return (count);
 }
 
@@ -53,10 +56,4 @@ int	ft_printf(const char *s, ...)
 		s++;
 	}
 	return (count);
-}
-int main()
-{
-int n = -32;// A hex number
-
-printf("%d\n", (unsigned int)n); // Prints: 1a2b3c (No prefix)
 }
