@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:28:48 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/22 11:44:15 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/11/23 17:43:12 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_putstr(char *s)
 	if (!*s)
 		return (0);
 	while (s[count])
-		ft_putchar(s[count++]);
+		catch_err(ft_putchar(s[count++]));
 	return (count);
 }

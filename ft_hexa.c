@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 18:05:03 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/23 16:01:13 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/11/23 17:41:46 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_dec_tohexa(unsigned long n, char c)
 		og_hexa = "0123456789abcdef";
 	if (n >= 16)
 		count += ft_dec_tohexa((n / 16), c);
-	count += ft_putchar(og_hexa[n % 16]);
+	count += catch_err(ft_putchar(og_hexa[n % 16]));
 	return (count);
 }
 

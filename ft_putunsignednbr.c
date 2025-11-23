@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 15:46:01 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/23 16:13:58 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/11/23 17:43:25 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int	ft_putunsignednbr(unsigned long n)
 	count = 0;
 	if (n > 9)
 		count += ft_putnbr(n / 10);
-	count += ft_putchar((n % 10) + '0');
+	count += catch_err(ft_putchar((n % 10) + '0'));
 	return (count);
 }

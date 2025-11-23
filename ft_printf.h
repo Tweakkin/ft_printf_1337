@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 17:47:34 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/23 15:56:40 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/11/23 17:38:32 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int	ft_dec_tohexa(unsigned long n, char c);
 int	ft_dec_tohexa_p(void *p);
 int	ft_putnbr(long n);
 int	ft_putunsignednbr(unsigned long n);
+int	catch_err(int ret);
 
 #endif
