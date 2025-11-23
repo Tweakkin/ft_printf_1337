@@ -6,7 +6,7 @@
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 17:47:27 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/23 15:39:51 by yboukhmi         ###   ########.fr       */
+/*   Updated: 2025/11/23 15:58:15 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ int	handle_formats(char format, va_list list)
 		count = ft_dec_tohexa_p(va_arg(list, void *));
 	if (format == 'd' || format == 'i')
 		count = ft_putnbr(va_arg(list, int));
-
+	if (format == 'u')
+		count = ft_putunsignednbr(va_arg(list, unsigned int));
 	return (count);
 }
 
@@ -55,5 +56,6 @@ int	ft_printf(const char *s, ...)
 			count += ft_putchar(*s);
 		s++;
 	}
+	va_end(list);
 	return (count);
 }

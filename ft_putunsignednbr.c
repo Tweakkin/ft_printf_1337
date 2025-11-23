@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunsignednbr.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 17:47:34 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/23 15:56:40 by yboukhmi         ###   ########.fr       */
+/*   Created: 2025/11/23 15:46:01 by yboukhmi          #+#    #+#             */
+/*   Updated: 2025/11/23 15:46:11 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stddef.h>
+int	ft_putunsignednbr(unsigned long n)
+{
+	int		count;
 
-int	ft_putchar(char c);
-int	ft_printf(const char *s, ...);
-int	handle_formats(char format, va_list list);
-int	ft_putstr(char *s);
-int	ft_dec_tohexa(unsigned long n, char c);
-int	ft_dec_tohexa_p(void *p);
-int	ft_putnbr(long n);
-int	ft_putunsignednbr(unsigned long n);
-
-#endif
+	count = 0;
+	if (n > 9)
+		count += ft_putnbr(n / 10);
+	count += ft_putchar((n % 10) + '0');
+	return (count);
+}
