@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_hexa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 17:47:34 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/22 18:31:15 by yboukhmi         ###   ########.fr       */
+/*   Created: 2025/11/22 18:05:03 by yboukhmi          #+#    #+#             */
+/*   Updated: 2025/11/22 18:31:01 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <stddef.h>
+int	ft_dec_tohexa(unsigned long n, char c)
+{
+	char	*og_hexa;
+	int		count;
 
-int	ft_putchar(char c);
-int	ft_printf(const char *s, ...);
-int	handle_formats(char format, va_list list);
-int	ft_putstr(char *s);
-int	ft_dec_tohexa(unsigned long n, char c);
-
-#endif
+	count = 0;
+	if (c == 'x')
+		og_hexa = "0123456789abcdef";
+	else if (c == 'X')
+		og_hexa = "0123456789ABCDEF";
+	if (n >= 16)
+		count += ft_dec_tohexa((n / 16), c);
+	count += ft_putchar(og_hexa[n % 16]);
+	return (count);
+}

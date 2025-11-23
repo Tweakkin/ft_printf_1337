@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/21 17:47:34 by yboukhmi          #+#    #+#             */
-/*   Updated: 2025/11/22 18:31:15 by yboukhmi         ###   ########.fr       */
+/*   Created: 2025/11/22 11:28:48 by yboukhmi          #+#    #+#             */
+/*   Updated: 2025/11/22 11:44:15 by yboukhmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <stddef.h>
+int	ft_putstr(char *s)
+{
+	int	count;
 
-int	ft_putchar(char c);
-int	ft_printf(const char *s, ...);
-int	handle_formats(char format, va_list list);
-int	ft_putstr(char *s);
-int	ft_dec_tohexa(unsigned long n, char c);
-
-#endif
+	count = 0;
+	if (!s)
+	{
+		count = ft_putstr("(null)");
+		return (count);
+	}
+	if (!*s)
+		return (0);
+	while (s[count])
+		ft_putchar(s[count++]);
+	return (count);
+}
