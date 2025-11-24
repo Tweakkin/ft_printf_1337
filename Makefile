@@ -6,7 +6,7 @@
 #    By: yboukhmi <yboukhmi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/23 16:10:31 by yboukhmi          #+#    #+#              #
-#    Updated: 2025/11/23 16:13:09 by yboukhmi         ###   ########.fr        #
+#    Updated: 2025/11/24 11:54:05 by yboukhmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,4 +32,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY:	clean
+.PHONY:	clean fclean re all
